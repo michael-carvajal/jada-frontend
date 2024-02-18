@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+button:hover,
+a:hover
+ {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+}
+
+.testimonial-card {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .testimonial-text::before,
+  .testimonial-text::after {
+    font-size: 2rem;
+    color: #AAA;
+    content: '“ '; /* for ::before */
+    vertical-align: middle; /* Adjusted alignment */
+    
+  }
+  
+  .testimonial-text::after {
+    content: '”'; /* for ::after */
+    vertical-align: middle; /* Adjusted alignment */
+  }
+  
+  .testimonial-text::before,
+  .testimonial-text::after {
+    position: relative;
+    line-height: 0;
+  }
+  
