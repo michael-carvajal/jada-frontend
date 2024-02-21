@@ -10,9 +10,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "engines": {
-    "node": ">=20.1.4 <21.0.0"
-  },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
     "@types/node": "20.1.4",

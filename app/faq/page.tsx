@@ -50,15 +50,15 @@ const faqs: FAQItem[] =  [
       answer: "Yes, I do! Drawing from my academic background and experience, I offer tutoring and homework assistance to support your child's educational journey."
     }
   ];
-  
-  const FAQItem: React.FC<{faq: FAQ}> = ({ faq }) => {
+
+  const FAQItem: React.FC<{faq: FAQItem}> = ({ faq }) => {
     const [isOpen, setIsOpen] = useState(false);
-  
+
     const toggleOpen = () => setIsOpen(!isOpen);
-  
+
     return (
       <div className="mb-4">
-        <div 
+        <div
           className="cursor-pointer font-bold py-2 px-6 bg-gray-100 hover:bg-jada-blue-400 transition duration-300 ease-in-out rounded-lg flex justify-between items-center"
           onClick={toggleOpen}
           onKeyDown={(e) => e.key === 'Enter' && toggleOpen()}
@@ -73,7 +73,7 @@ const faqs: FAQItem[] =  [
       </div>
     );
   };
-  
+
   const FAQPage: React.FC = () => {
     return (
       <div className="container mx-auto p-4">
@@ -86,5 +86,5 @@ const faqs: FAQItem[] =  [
       </div>
     );
   };
-  
+
   export default FAQPage;

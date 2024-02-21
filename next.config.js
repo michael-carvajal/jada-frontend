@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  rewrites: async () => {
+  async rewrites() {
     return [
       {
         source: '/api/:path*',
-        destination:
-          process.env.NODE_ENV === 'development'
-            ? 'http://127.0.0.1:5000/api/:path*'
-            : '/api/',
+        destination: `https://jada-backend.onrender.com/:path*`,
       },
     ]
   },

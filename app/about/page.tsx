@@ -15,36 +15,38 @@ const certifications = [
 ];
 
 export default function AboutPage() {
-  const messageContext = useContext(MessageData);
-  const { message, setMessage } = messageContext || {};
+    const messageContext = useContext(MessageData);
+    const { message, setMessage } = messageContext || {};
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('/api/about_page')
-      const data = await response.json();
-      setMessage(data.about_pages[0]);
-    }
-    fetchData();
-  }, []);
+    useEffect(() => {
+      async function fetchData() {
+        const response = await fetch('/api/about_page')
+        const data = await response.json();
+        console.log("Output",data);
+        setMessage(data.about_pages[0])
 
-  return (
-    <div className="container mx-auto p-8">
-  <div className="max-w-2xl mx-auto">
+      }
 
-    <h2 className="text-2xl font-bold mb-4 text-center">Certifications</h2>
-    <ul className="list-disc list-inside text-lg mb-6 text-center mb-20">
-      {certifications.map((cert, index) => (
-        <li key={index}>{cert}</li>
-      ))}
-    </ul>
+      fetchData()
+    },[])
+    return (
+      <div className="container mx-auto p-4 flex flex-col md:flex-row items-center">
+          <div className="flex-1">
+              <Image
+                  src="/flower.jpg"
+                  alt="About Us"
+                  width={500}
+                  height={500}
+                  layout="responsive"
+              />
+          </div>
+          <div className="flex-1 p-4">
+              <h1 className="text-2xl font-bold mb-4">About Jada</h1>
 
-    <h1 className="text-4xl font-bold mb-6 text-center">About Jada</h1>
-    <p className="mb-4 text-lg leading-relaxed">{message?.first_para}</p>
-    <p className="mb-4 text-lg leading-relaxed">{message?.second_para}</p>
-    {/* Add additional paragraphs as needed */}
-    
-  </div>
-</div>
+                  <p className="mb-2">{message?message.first_para:null}</p>
+                  <p className="mb-2">{message?message.second_para:null}</p>
 
+          </div>
+      </div>
   );
 }

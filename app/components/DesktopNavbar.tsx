@@ -20,8 +20,7 @@ const DesktopNavbar: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleButtonClick = (e) => {
-    e.preventDefault();
+  const handleButtonClick = () => {
     router.push('/booking')
   }
 
