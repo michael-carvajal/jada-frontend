@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: `https://jada-backend.onrender.com/:path*`,
+        destination: `https://jada-backend.onrender.com/api/:path*`,
       },
     ]
   },
